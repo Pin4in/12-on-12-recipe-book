@@ -1,0 +1,60 @@
+$text-black: #000;
+$price-color: #fdac5d;
+$recipe-item-border: #818a91;
+$recipe-item-background: rgba(154, 187, 208, 0.15);
+$description-in-menu-color: rgba(255,255,255,.85);
+
+
+
+.recipe-item {
+  display: flex;
+  padding: 10px;
+
+
+  &--in-menu {
+
+    background: #f2f2f2;
+
+    .recipe-item__status {
+      color: #fdac5d;
+    }
+
+  }
+
+  &__status {
+    width: 80px;
+    font-size: 3.5rem;
+    text-align: center;
+    cursor: pointer;
+    color: #b5b9bd;
+  }
+
+
+  &__info {
+    padding-left: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .head {
+      font-size: 1.6rem;
+      color: inherit;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .price {
+      color: $price-color;
+    }
+
+    .description {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+  }
+
+}

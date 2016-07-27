@@ -1,0 +1,37 @@
+<template name="recipesListItem">
+
+  <li class="recipe-item {{#if inMenu}} recipe-item--in-menu {{/if}}">  
+    <div class="recipe-item__status">
+      <i class="fa fa-check-circle" aria-hidden="true"></i>
+    </div>
+    <div class="recipe-item__info">
+      <a href="#" class="head">
+        {{title}}
+        <span class="price">
+          {{price}}$
+        </span>
+      </a>
+      <p class="description text-muted">
+        {{description}}
+      </p>
+    </div>
+  </li>
+</template>
+
+
+<!-- <li class="recipe-item recipe-item--in-menu">
+<div class="recipe-item__status">
+<i class="fa fa-check-circle" aria-hidden="true"></i>
+</div>
+<div class="recipe-item__info">
+<a href="#" class="head">
+Some title
+<span class="price">
+120$
+</span>
+</a>
+<p class="description text-muted">
+very tasty dish
+</p>
+</div>
+</li> -->
