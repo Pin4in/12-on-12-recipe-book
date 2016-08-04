@@ -1,10 +1,13 @@
 <template name="layout">
   <div class="main-nav bg-info">
-    fdsfsfasdf
+    <a href="{{pathFor 'recipesList'}}">Home</a>
+    {{> loginButtons}}
   </div>
   <div class="page-wrapper">
     <div class="side-nav bg-success">
-      fjslfjsdfjdskl
+      <div class="m-t-2">
+        <a href="{{pathFor 'submitRecipe'}}">Submit new recipe</a>
+      </div>
     </div>
     <div class="content-wrapper">
       {{> yield}}
