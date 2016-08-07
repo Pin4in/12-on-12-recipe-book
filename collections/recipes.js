@@ -1,26 +1,59 @@
 Recipes = new Mongo.Collection("recipes");
 
+
+Recipes.allow({
+  insert: function(userId, doc) {
+    // разрешить постить только если пользователь залогинен
+    return !! userId;
+  },
+  update: function(userId, doc) {
+    // разрешить постить только если пользователь залогинен
+    return !! userId;
+  }
+});
+
+ingredient = new SimpleSchema({
+  name: {
+    type: String,
+    label: "Name"
+  },
+  amount: {
+    type: Number,
+    label: "Quantity"
+  },
+  units: {
+    type: String,
+    label: "Units"
+  }
+});
+
 recipesSchema = new SimpleSchema({
   title: {
     type: String,
-    label: 'Title'
+    label: "Title"
   },
   description: {
     type: String,
-    label: 'description'
+    label: "Description"
+  },
+  ingredients: {
+    type: [ingredient]
   },
   categories: {
     type: String,
-    label: 'categories'
+    label: "Categories"
   },
   price: {
     type: Number,
-    label: 'Price'
+    label: "Price"
   },
   inMenu: {
     type: Boolean,
     defaultValue: false,
     optional: true,
+    autoform: {
+      type: "hidden"
+    }
   },
   author: {
     type: String,
@@ -45,11 +78,3 @@ recipesSchema = new SimpleSchema({
 });
 
 Recipes.attachSchema(recipesSchema);
-
-
-Recipes.allow({
-  insert: function(userId, doc) {
-    // разрешить постить только если пользователь залогинен
-    return !! userId;
-  }
-});
